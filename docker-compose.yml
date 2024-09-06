@@ -1,0 +1,15 @@
+version: '3.3'
+
+services:
+  mysqld:
+    build:
+      context: ./
+      dockerfile: compose/Dockerfile
+    ports:
+      - '3306:3306'
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+
+volumes:
+  mysql_master_data:
+    driver: local
